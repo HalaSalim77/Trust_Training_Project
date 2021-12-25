@@ -46,7 +46,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // public routes 
-//route for new mehtod that i have been created = search 
+// route for new mehtod that i have been created = search 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
