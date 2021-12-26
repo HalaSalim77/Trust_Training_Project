@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserPhoneController;
 use Illuminate\Support\Facades\Auth;
@@ -30,6 +31,16 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/students', [StudentController::class , 'index' ]);
 
 
-Route::get('/', [UserPhoneController::class , 'show']);
-Route::post('/', [UserPhoneController::class ,  'storePhoneNumber']);
-Route::post('/custom', [UserPhoneController::class , 'sendCustomMessage']);
+// Route::get('/', [UserPhoneController::class , 'show']);
+// Route::post('/', [UserPhoneController::class ,  'storePhoneNumber']);
+// Route::post('/custom', [UserPhoneController::class , 'sendCustomMessage']);
+
+
+//DESIGN PATTERN - Repository Pattern 
+Route::get('/' , [CustomerController::class , 'index']);
+
+Route::get('/customer/{customerId}', [CustomerController::class, 'show']);
+
+Route::get('/customer/{customerId}/update', [CustomerController::class, 'update']);
+
+Route::get('/customer/{customerId}/delete', [CustomerController::class, 'destroy']);
