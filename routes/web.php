@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserPhoneController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +45,8 @@ Route::get('/customer/{customerId}', [CustomerController::class, 'show']);
 Route::get('/customer/{customerId}/update', [CustomerController::class, 'update']);
 
 Route::get('/customer/{customerId}/delete', [CustomerController::class, 'destroy']);
+
+//user controller  
+//R
+Route::get('user/{id}', [UserController::class, 'index']);
+Route::get('users', [UserController::class, 'listAll']);
